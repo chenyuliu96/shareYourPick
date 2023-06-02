@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import ShareYourPick from "./components/ShareYourPick";
+import AddToCart from "./components/AddToCart";
+import PictureGrid from "./components/helperComponent/PictureGrid";
+import Cart from "./components/Cart";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <Router>
+            <Switch>
+                <Route path="/ShareYourPick" component={ShareYourPick} />
+                <Route path="/AddToCart/:promoId" component={AddToCart} />
+                <Route path="/test" component={PictureGrid} />
+                <Route path="/Cart" component={Cart} />
+            </Switch>
+
+        </Router>
+    );
+};
 
 export default App;

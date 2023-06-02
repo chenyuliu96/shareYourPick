@@ -1,0 +1,13 @@
+.picture-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
+    gap: 70px; /* Adjust the gap between images */
+    margin-right: 20%;
+    margin-left: 20%;
+
+}
+
+.picture-grid img {
+    width: 70%;
+    height: auto;
+}

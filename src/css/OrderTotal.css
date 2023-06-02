@@ -1,0 +1,22 @@
+.order-total-carousel {
+    width: 300px;
+    background-color: #ccc;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.carousel {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.carousel-item {
+    background-color: white;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.total {
+    margin-top: 20px;
+}
