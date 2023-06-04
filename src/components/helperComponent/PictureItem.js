@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
-const PictureItem = ({ picture, onSelect }) => {
+const PictureItem = ({ picture, onSelect, showCheckbox }) => {
     const [selected, setSelected] = useState(false);
-
     const handleCheckboxChange = () => {
         const updatedSelected = !selected;
         setSelected(updatedSelected);
@@ -12,13 +11,17 @@ const PictureItem = ({ picture, onSelect }) => {
     return (
         <div className="picture-item">
             <img src={process.env.PUBLIC_URL + picture.url} alt={picture.title} />
-            <div className="checkbox-container">
-                <input
-                    type="checkbox"
-                    checked={selected}
-                    onChange={handleCheckboxChange}
-                />
-            </div>
+            {showCheckbox ? (
+                <div className="checkbox-container">
+                    <input
+                        type="checkbox"
+                        checked={selected}
+                        onChange={handleCheckboxChange}
+                    />
+                </div>
+            ) : null}
+
+
         </div>
     );
 };

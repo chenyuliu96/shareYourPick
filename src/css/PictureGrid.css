@@ -1,9 +1,9 @@
 .picture-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
-    gap: 70px; /* Adjust the gap between images */
-    margin-right: 20%;
-    margin-left: 20%;
+    gap: 10px; /* Adjust the gap between images */
+    margin-right: 5%;
+    margin-left: 5%;
 
 }
 

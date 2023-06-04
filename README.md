@@ -68,3 +68,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### How to navigate through this demo
+1. `http://localhost:3000/` is OrderHistory Page 
+2. `ShareYourPick` button will direct you to share your pick for a specific order
+3. Select the asin you'd like to share, then click `Generate Link`
+4. Copy and Paste the promo link to share with someone
+5. The promo link takes customer to `Add To Cart` page, where they add discounted items to cart
+6. 

@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import PictureGrid from "./helperComponent/PictureGrid";
-import { useParams } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
-import {pictures} from "../constant";
+import {useHistory, useParams} from 'react-router-dom';
+import {order} from "../constant";
 
 const AddToCart = () => {
     const {promoId} = useParams();  //TODO promoId should come from database query
-
+    let pictureList = order[`${promoId}`];
     const history = useHistory();
     const [selectedAsins, setSelectedAsins] = useState([]);
     let asinsFromPromoId = '';
@@ -54,15 +53,17 @@ const AddToCart = () => {
     );
 
     };
-
     return (
         <div className="AddToCart">
-            <h1>Add To Cart To Enjoy a 10% off</h1>
-            {/*TODO The displayed asins are hard coded for now, we need to query database to get the list of asins in promotion*/}
-            <PictureGrid pictures={pictures} onSelect={handlePictureSelect} />
-            <button onClick={handleRedirect}>Add To Cart</button>
+            <div className="grey-background">
+                <div className="floating-container">
+                    <h1>Add To Cart To Enjoy a 10% off</h1>
+                    {/*TODO The displayed asins are hard coded for now, we need to query database to get the list of asins in promotion*/}
+                    <PictureGrid pictures={pictureList} onSelect={handlePictureSelect} showCheckbox={true} />
+                    <button className="btn btn-warning" type="button" onClick={handleRedirect}>Add To Cart</button>
+                </div>
+            </div>
         </div>
-
     );
 };
 
