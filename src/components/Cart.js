@@ -1,15 +1,15 @@
 import React from 'react';
 import PictureGrid from "./helperComponent/PictureGrid";
 import {useLocation} from 'react-router-dom';
-import {pictures} from "../constant";
+import {pictures, pictures2} from "../constant";
 import '../css/Cart.css';
 
 const Cart = () => {
     const location = useLocation();
     const asins = location.state.selectedAsins;
-    const selectedAsins = pictures.filter((picture) => asins.includes(picture.id));
+    const selectedAsins = pictures.concat(pictures2).filter((picture) => asins.includes(picture.id));
     const totalPrice = selectedAsins.reduce((acc, picture) => acc + picture.price, 0);
-    const reduced = totalPrice * 0.1;
+    const reduced = (totalPrice * 0.1).toFixed(2);
     return (
         <div className="Cart">
             <div className="grey-background">
