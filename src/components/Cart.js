@@ -8,7 +8,7 @@ const Cart = () => {
     const location = useLocation();
     const asins = location.state.selectedAsins;
     const selectedAsins = pictures.concat(pictures2).filter((picture) => asins.includes(picture.id));
-    const totalPrice = selectedAsins.reduce((acc, picture) => acc + picture.price, 0);
+    const totalPrice = (selectedAsins.reduce((acc, picture) => acc + picture.price, 0)).toFixed(2);
     const reduced = (totalPrice * 0.1).toFixed(2);
     return (
         <div className="Cart">
